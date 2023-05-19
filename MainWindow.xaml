@@ -4,7 +4,58 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IcarusDroneService"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="MainWindow" Height="570" Width="830">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="106*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TextBoxClientName" HorizontalAlignment="Left" Margin="104,9,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxClientModel" HorizontalAlignment="Left" Margin="104,46,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Client Name" HorizontalAlignment="Left" Margin="16,9,0,0" VerticalAlignment="Top"/>
+        <Label Content="Drone Model" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxServiceCost" HorizontalAlignment="Left" Margin="104,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Service Cost" HorizontalAlignment="Left" Margin="16,84,0,0" VerticalAlignment="Top"/>
+        <Label Content="Service Problem" HorizontalAlignment="Left" Margin="16,131,0,0" VerticalAlignment="Top"/>
+        <Label Content="Service Tag" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top"/>
+        <wpfx:IntegerUpDown Name="IntegerUpDown" Margin="104,229,239,13"/>
+        <Button Content="Service Drone" HorizontalAlignment="Left" Margin="279,238,0,0" VerticalAlignment="Top" Height="32" Width="90"/>
+        <Button Content="Add Service" HorizontalAlignment="Left" Margin="22,19,0,0" VerticalAlignment="Top" Height="32" Width="90" Grid.Column="1"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="22,66,23,21" Grid.Column="1"/>
+        <Button Content="Service Drone" HorizontalAlignment="Left" Margin="302,208,0,0" VerticalAlignment="Top" Height="32" Width="90" Grid.Row="1" Grid.Column="1"/>
+        <RadioButton x:Name="rbRegular" Content="Regular" HorizontalAlignment="Left" Margin="249,12,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbExpress" Content="Express" HorizontalAlignment="Left" Margin="249,48,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name Model Problem Client Tag" HorizontalAlignment="Left" Margin="53,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="192"/>
+        <Label Content="Name Model Problem Client Tag" HorizontalAlignment="Left" Margin="22,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="192" Grid.Column="1"/>
+        <ListView x:Name="listViewRegularServiceQueue" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="19,42,19,68">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Model" Width="90" DisplayMemberBinding="{Binding Model}"/>
+                    <GridViewColumn Header="Service" Width="70" DisplayMemberBinding="{Binding Service}"/>
+                    <GridViewColumn Header="Cost" Width="60" DisplayMemberBinding="{Binding Cost}"/>
+                    <GridViewColumn Header="Tag" Width="60" DisplayMemberBinding="{Binding Tag}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="19,42,19,68" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Model" Width="90" DisplayMemberBinding="{Binding Model}"/>
+                    <GridViewColumn Header="Service" Width="70" DisplayMemberBinding="{Binding Service}"/>
+                    <GridViewColumn Header="Cost" Width="60" DisplayMemberBinding="{Binding Cost}"/>
+                    <GridViewColumn Header="Tag" Width="60" DisplayMemberBinding="{Binding Tag}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="TextBoxServiceProblem" HorizontalAlignment="Left" Margin="116,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="143" Height="51"/>
+        <StatusBar Grid.Row="1" Grid.ColumnSpan="2" Margin="0,245,0,0"/>
+    </Grid>
 </Window>

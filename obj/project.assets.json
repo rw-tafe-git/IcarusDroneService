@@ -122,11 +122,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TEMP\\Documents\\GitHub\\IcarusDroneService\\IcarusDroneService.csproj",
+      "projectUniqueName": "C:\\Users\\TEMP\\Source\\Repos\\IcarusDroneService\\IcarusDroneService.csproj",
       "projectName": "IcarusDroneService",
-      "projectPath": "C:\\Users\\TEMP\\Documents\\GitHub\\IcarusDroneService\\IcarusDroneService.csproj",
+      "projectPath": "C:\\Users\\TEMP\\Source\\Repos\\IcarusDroneService\\IcarusDroneService.csproj",
       "packagesPath": "C:\\Users\\TEMP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TEMP\\Documents\\GitHub\\IcarusDroneService\\obj\\",
+      "outputPath": "C:\\Users\\TEMP\\Source\\Repos\\IcarusDroneService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\TEMP\\AppData\\Roaming\\NuGet\\NuGet.Config",
