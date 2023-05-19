@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace IcarusDroneService
 {
+    // 6.1	Create a separate class file to hold the data items of the Drone. Use separate getter and setter methods, ensure the attributes are private and the accessor methods are public. Add a display method that returns a string for Client Name and Service Cost. Add suitable code to the Client Name and Service Problem accessor methods so the data is formatted as Title case or Sentence case. Save the class as “Drone.cs”.
     internal class Drone
     {
-        /*private string ClientName;
+        private string ClientName;
         private string DroneModel;
         private string ServiceProblem;
-        //private string ClientName;
-        //private string ClientName;
+        private float ServiceCost;
+        private int ServiceTag;
 
         public Drone() { }
 
@@ -26,28 +27,47 @@ namespace IcarusDroneService
             
         }
 
-        public string GetClientName()
+        public string GetDroneModel()
         {
-            return ClientName;
+            return DroneModel;
         }
 
-        public void SetClientName(string newClient)
+        public void SetDroneModel(string newClient)
         {
 
         }
 
-        public string GetClientName()
+        public string GetServiceProblem()
         {
-            return ClientName;
+            return ServiceProblem;
         }
 
-        public void SetServiceCost(string newClient)
+        public void SetServiceProblem(string newServiceProblem)
+        {
+            
+        }
+
+        public float GetServiceCost()
+        {
+            return ServiceCost;
+        }
+
+        public void SetServiceCost(float newServiceCost)
         {
             if (newServiceCost <= 0)
-                ServiceCost = 44.99;
+                ServiceCost = 44.99f;
             else
                 ServiceCost = newServiceCost;
+        }
 
-        }*/
+        public int GetServiceTag()
+        {
+            return ServiceTag;
+        }
+
+        public void SetServiceTag(int newServiceTag)
+        {
+            ServiceTag = newServiceTag;
+        }
     }
 }
