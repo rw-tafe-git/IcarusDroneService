@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace IcarusDroneService
 {
@@ -12,7 +13,7 @@ namespace IcarusDroneService
         private string ClientName;
         private string DroneModel;
         private string ServiceProblem;
-        private float ServiceCost;
+        private double ServiceCost;
         private int ServiceTag;
 
         public Drone() { }
@@ -24,7 +25,10 @@ namespace IcarusDroneService
 
         public void SetClientName(string newClient)
         {
-            
+            if (newClient == null)
+                ClientName = "Unknown";
+            else
+                ClientName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(newClient);
         }
 
         public string GetDroneModel()
@@ -32,9 +36,9 @@ namespace IcarusDroneService
             return DroneModel;
         }
 
-        public void SetDroneModel(string newClient)
+        public void SetDroneModel(string newModel)
         {
-
+            DroneModel = newModel;
         }
 
         public string GetServiceProblem()
@@ -44,15 +48,15 @@ namespace IcarusDroneService
 
         public void SetServiceProblem(string newServiceProblem)
         {
-            
+            ServiceProblem = newServiceProblem;
         }
 
-        public float GetServiceCost()
+        public double GetServiceCost()
         {
             return ServiceCost;
         }
 
-        public void SetServiceCost(float newServiceCost)
+        public void SetServiceCost(double newServiceCost)
         {
             if (newServiceCost <= 0)
                 ServiceCost = 44.99f;
@@ -68,6 +72,11 @@ namespace IcarusDroneService
         public void SetServiceTag(int newServiceTag)
         {
             ServiceTag = newServiceTag;
+        }
+
+        public string DisplayFinishedDrones()
+        {
+            return GetClientName() + " : " + GetServiceCost();
         }
     }
 }
