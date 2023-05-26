@@ -133,7 +133,7 @@ namespace IcarusDroneService
         //6.10	Create a custom keypress method to ensure the Service Cost textbox can only accept a double value with one decimal point.
         private void TextBoxServiceCost_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //Regex regex = new Regex;
+            //Regex regex = new Regex();
         }
 
         //6.11	Create a custom method to increment the service tag control, this method must be called inside the “AddNewItem” method before the new service item is added to a queue.
