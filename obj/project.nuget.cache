@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7b9sE2UmcGqsUL5+hRAFQLKl4BZrCEK1Vei2QXwJmd1hC3nF/e50W/tLtoYYC8X/C49FvYvgx1kRpMKxoOZf1A==",
+  "dgSpecHash": "qiFDtiVr8yXQh4Le+lxLWFkqYmBy6agb5STSdu5NXtjzyYaDBzPfchL6n5eJOeaqutjbUuB8q9nu5LFyUaCUIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\TEMP\\Source\\Repos\\IcarusDroneService\\IcarusDroneService.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Source\\Repos\\IcarusDroneService\\IcarusDroneService.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\TEMP\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -76,7 +76,7 @@ namespace IcarusDroneService
 
         public string DisplayFinishedDrones()
         {
-            return GetClientName() + " : " + GetServiceCost();
+            return GetClientName() + " : " + GetServiceCost().ToString("0.0");
         }
     }
 }

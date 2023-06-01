@@ -126,7 +126,7 @@ namespace IcarusDroneService
 
             foreach (Drone value in ExpressService)
             {
-                listViewExpressServiceQueue.Items.Add(new { Name = value.GetClientName(), Model = value.GetDroneModel(), Problem = value.GetServiceProblem(), Cost = value.GetServiceCost(), Tag = value.GetServiceTag() });
+                listViewExpressServiceQueue.Items.Add(new { Name = value.GetClientName(), Model = value.GetDroneModel(), Problem = value.GetServiceProblem(), Cost = value.GetServiceCost().ToString("0.0"), Tag = value.GetServiceTag() });
             }
         }
 
@@ -178,7 +178,7 @@ namespace IcarusDroneService
                     int index = listViewExpressServiceQueue.SelectedIndex;
                     TextBoxClientName.Text = ExpressService.ElementAt(index).GetClientName();
                     TextBoxClientModel.Text = ExpressService.ElementAt(index).GetDroneModel();
-                    TextBoxServiceCost.Text = ExpressService.ElementAt(index).GetServiceCost().ToString();
+                    TextBoxServiceCost.Text = ExpressService.ElementAt(index).GetServiceCost().ToString("0.0");
                     TextBoxServiceProblem.Text = ExpressService.ElementAt(index).GetServiceProblem();
                 }
                 else
