@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Text.RegularExpressions;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -133,7 +134,8 @@ namespace IcarusDroneService
         //6.10	Create a custom keypress method to ensure the Service Cost textbox can only accept a double value with one decimal point.
         private void TextBoxServiceCost_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //Regex regex = new Regex();
+            Regex regex = new Regex(@"^([0-9]{1,4}((\.)[0-9]{0,2})?)$");
+            e.Handled = !regex.IsMatch((sender as TextBox).Text.Insert((sender as TextBox).SelectionStart, e.Text));
         }
 
         //6.11	Create a custom method to increment the service tag control, this method must be called inside the “AddNewItem” method before the new service item is added to a queue.
@@ -147,6 +149,7 @@ namespace IcarusDroneService
         //6.12	Create a mouse click method for the regular service ListView that will display the Client Name and Service Problem in the related textboxes.
         private void listViewRegularServiceQueue_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Error trapping
             try
             {
                 if (listViewRegularServiceQueue.SelectedIndex != -1)
@@ -200,6 +203,7 @@ namespace IcarusDroneService
                 FinishedList.Add(RegularService.Dequeue());
                 DisplayRegularService();
                 FinishedListDisplay();
+                ClearTextBoxes();
 
                 TextBlockStatus.Text = "Successfully dequeued service";
             }
@@ -213,6 +217,7 @@ namespace IcarusDroneService
                 FinishedList.Add(ExpressService.Dequeue());
                 DisplayExpressService();
                 FinishedListDisplay();
+                ClearTextBoxes();
 
                 TextBlockStatus.Text = "Successfully dequeued service";
             }
